@@ -14,8 +14,8 @@ while True:
     if command == 'help':
         print(HELP)
     elif command == 'todo':
-        date = input('Введите дату: ')
-        task = input('Введите задачу: ')
+        date = input('Введите дату:\n')
+        task = input('Введите задачу:\n')
         if date == 'Сегодня':
             today.append(task)
         elif date == 'Завтра':
