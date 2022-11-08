@@ -1,65 +1,40 @@
-# HELP = """
-# help - Напечатать справку по программе.
-# add - Добавить задачу в список (название задачи запрашиваем у пользователя).
-# show - Напечатать все добавленные задачи
-# delete - Удалить задачу
-# exit - Выйти из бота"""
-#
-# tasks = []
-#
-# run = True
-#
-# while run:
-#     command = input("Ведите команду: ")
-#     if command == "help":
-#         print(HELP)
-#     elif command == "show":
-#         print(tasks)
-#     elif command == "add":
-#         task = input("Введите название задачи: ")
-#         tasks.append(task)
-#         print("Задача добавлена!")
-#     else:
-#         print("Неизвестная команда")
-#         break
-#
-# print("До свидания!")
+today = list() # today = []
+tomorrow = list() # tomorrow = []
+other = list() # other = []
 
 
-HELP = """
-help - напечатать строку о программе
-add - добавить задачу в список (название задачи запрашиваем у пользователя)
-show - показать все добавленные задачи
-print - вывести на экран
-exit - выход. """
+HELP = '''
+Список доступных команд:
+* print  - напечать все задачи на заданную дату
+* todo - добавить задачу
+* help - Напечатать help
+'''
 
-today = []
-tomorrow = []
-other = []
 
 while True:
-    command = input("Введите команду: ")
-    if command == "help":
+    command = input('Введите команду\n')
+    if command == 'help':
         print(HELP)
-    elif command == "show":
-        print(tasks)
-    elif command == "add":
-        date = input("Введите дату выполнения задачи: ")
-        task = input("Введите название задачи: ")
-    if date == "Сегодня":
-        today.append(task)
-    elif date == "Завтра":
-        tomorrow.append(task)
+    elif command == 'todo':
+        date = input('Введите дату: ')
+        task = input('Введите задачу: ')
+        if date == 'Сегодня':
+          today.append(task)
+        elif date == 'Завтра':
+          tomorrow.append(task)
+        else:
+          other.append(task)
+        print(f'Задача {task} добавлена')
+    elif command == 'show':
+        print('Сегодня')
+        print(today)
+        print('Завтра')
+        print(tomorrow)
+        print('Другие')
+        print(other)
+    elif command == 'exit':
+        print('Спасибо за использование! До свидания!')
+        break
     else:
-        other.append(task)
-    elif command == 'print':
-        print(today, tomorrow, other)
-    elif command == "exit":
-        print("Спасибо за использование! До свидания!")
-    else:
-         print("Неизвестная задача")
-            break
-    print("До свидания")
-
-    print("Неизвестная команда - ", command)
-            break
+        print('Неизвестная команда!')
+        break
