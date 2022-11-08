@@ -1,7 +1,6 @@
-today = list() # today = []
-tomorrow = list() # tomorrow = []
-other = list() # other = []
-
+today = list()  # today = []
+tomorrow = list()  # tomorrow = []
+other = list()  # other = []
 
 HELP = '''
 Список доступных команд:
@@ -9,7 +8,6 @@ HELP = '''
 * todo - добавить задачу
 * help - Напечатать help
 '''
-
 
 while True:
     command = input('Введите команду\n')
@@ -19,11 +17,11 @@ while True:
         date = input('Введите дату: ')
         task = input('Введите задачу: ')
         if date == 'Сегодня':
-          today.append(task)
+            today.append(task)
         elif date == 'Завтра':
-          tomorrow.append(task)
+            tomorrow.append(task)
         else:
-          other.append(task)
+            other.append(task)
         print(f'Задача {task} добавлена')
     elif command == 'show':
         print('Сегодня')
