@@ -53,14 +53,13 @@ while True:
     else:
         other.append(task)
     elif command == 'print':
-    print(today, tomorrow, other)
+        print(today, tomorrow, other)
     elif command == "exit":
-    print("Спасибо за использование! До свидания!")
-else:
-    print("Неизвестная задача")
-    break
+        print("Спасибо за использование! До свидания!")
+    else:
+         print("Неизвестная задача")
+            break
     print("До свидания")
 
-
-print("Неизвестная команда - ", command)
-break
+    print("Неизвестная команда - ", command)
+            break
