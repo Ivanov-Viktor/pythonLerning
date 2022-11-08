@@ -1,5 +1,5 @@
-todos = dict()  # todos = {}
-todos = list()  # todos = []
+todos: dict = dict()  # todos = {}
+todos: list = list()  # todos = []
 
 HELP = '''
 Список доступных команд:
