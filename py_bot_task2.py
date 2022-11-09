@@ -1,38 +1,26 @@
-today = list()  # today = []
-tomorrow = list()  # tomorrow = []
-other = list()  # other = []
-
 HELP = '''
-Список доступных команд:
-* print  - напечать все задачи на заданную дату
-* todo - добавить задачу
-* help - Напечатать help
-'''
+help - вывести на экран, что умеет бот.
+add - добавить задачу в список (запрашиваем у пользователя).
+show - напечатать все добавленные задачи.'''
 
-while True:
-    command = input('Введите команду\n')
-    if command == 'help':
+tasks = {
+
+
+}
+
+#Сегодня, завтра, 31.12 ...
+#[Задача 1, Задача2, Задача3]
+#Дата -> [Задача 1, Задача2, Задача3]
+
+run = True
+
+while run:
+    command = input("Введите команду\n")
+    if command == "help":
         print(HELP)
-    elif command == 'todo':
-        date = input('Введите дату:\n')
-        task = input('Введите задачу:\n')
-        if date == 'Сегодня':
-            today.append(task)
-        elif date == 'Завтра':
-            tomorrow.append(task)
-        else:
-            other.append(task)
-        print(f'Задача {task} добавлена')
-    elif command == 'show':
-        print('Сегодня')
-        print(today)
-        print('Завтра')
-        print(tomorrow)
-        print('Другие')
-        print(other)
-    elif command == 'exit':
-        print('Спасибо за использование! До свидания!')
-        break
-    else:
-        print('Неизвестная команда!')
-        break
+    elif command == "show":
+        print(tasks)
+    elif command == "add":
+        date = input("Введите дату для добавления задачи")
+        tasks = input("Введите название задачи:\n ")
+        tasks.append(task)
