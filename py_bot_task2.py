@@ -15,12 +15,15 @@ tasks = {
 run = True
 
 while run:
-    command = input("Введите команду\n")
+    command = input("Введите команду:\n")
     if command == "help":
         print(HELP)
     elif command == "show":
         print(tasks)
     elif command == "add":
-        date = input("Введите дату для добавления задачи")
-        tasks = input("Введите название задачи:\n ")
-        tasks.append(task)
+        date = input("Введите дату для добавления задачи:\n")
+        tasks = input("Введите название задачи:\n")
+        if date in tasks:
+            tasks[date].append(task)
+
+
